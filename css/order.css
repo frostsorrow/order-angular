@@ -1,0 +1,93 @@
+body{
+    font-family: "Helvetica Neue",'SimHei', Arial, sans-serif ;
+    margin-top:60px;
+    position: relative;
+    overflow-x: hidden ;
+}
+.marginBottom{
+    margin-bottom: 60px;
+}
+/*.container{*/
+    /*min-width: 346px !important;*/
+/*}*/
+/*start起始页面*/
+.startTxt{
+    font-size: 80px;
+    margin-top:100px;
+}
+/*底部导航条*/
+.navbar-fixed-bottom li{
+    width: 33.3%;
+    text-align: center;
+    float:left;
+}
+.navbar-fixed-bottom li a{
+    padding: 15px;
+}
+/*menu菜单页*/
+.menu-divider{
+    border-bottom: 1px solid #ddd;
+    margin-top:5px;
+    margin-bottom:3px;
+}
+.menu-loading{
+    width: 20px;
+}
+/*detail菜品详情页*/
+.detail-divider{
+    border-bottom: 1px solid #ddd;
+    margin-top:15px;
+    margin-bottom:20px;
+}
+.detail-breadcrumb{
+    margin:0;
+    padding: 0;
+}
+.detail-h{
+    font-size: 30px;
+}
+.detail-img{
+    margin-bottom: 20px;
+}
+.panel{
+    margin-bottom: 60px;
+}
+/*用户订单页*/
+table tr td,th{
+    border-left: 0 !important;
+    border-right: 0 !important;
+    vertical-align: middle !important;
+}
+/*order订餐页*/
+.round-border{
+    border-radius: 4px;
+}
+.textarea-size{
+    width: 100%;
+    height:100px;
+}
+
+/*不同页面切换*/
+.page {
+    transition: all .5s linear;
+    position: absolute;
+    width: 100%;
+}
+.page.ng-leave {
+    left: 0;
+}
+
+.page.ng-leave-active {
+    left: -100%;
+}
+
+.page.ng-enter {
+    left: 100%;
+}
+
+.page.ng-enter-active {
+    left: 0;
+}
+
+
+

@@ -1,1 +1,1 @@
-hi
+利用angular单页应用和bootstrap写的一个手机订餐app，可搜索菜品、下单

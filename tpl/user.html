@@ -1,0 +1,24 @@
+<div ng-include="'tpl/header.html'"></div>
+<div class="container marginBottom" ng-controller="userOrderList">
+    <h1>我的订单</h1>
+    <table class="table table-bordered text-left table-responsive table-striped">
+        <thead>
+        <tr>
+            <th>编号</th>
+            <th>菜品</th>
+            <th>下单时间</th>
+            <th>联系人</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="dish in orders">
+            <td class="text-center">{{dish.oid}}</td>
+            <td><img src="{{'img/'+dish.img_sm}}" alt="" class="img-responsive"></td>
+            <td >{{dish.order_time | date:'yyyy-MM-dd hh:mm:ss' }}</td>
+            <!--注意区分大小写，月要用大写M-->
+            <td>{{dish.user_name}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div ng-include="'tpl/footer.html'"></div>

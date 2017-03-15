@@ -1,0 +1,31 @@
+<div ng-include="'tpl/header.html'"></div>
+<div class="container marginBottom" ng-controller="menuLoad">
+    <form action="#" class="form">
+        <div class="form-group has-feedback">
+            <label for="menuSearch" class="sr-only">搜索菜品名称和原料...</label>
+            <input type="text" class="form-control" id="menuSearch" placeholder="搜索菜品名称和原料..." ng-model="kw">
+            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+        </div>
+    </form>
+    <div class="list-group">
+        <a class="list-group-item" ng-repeat="dish in menu" href="#/detail/{{dish.did}}">
+            <div class="media">
+                <div class="media-left">
+                    <img src="{{'img/'+dish.img_sm}}" alt="">
+                </div>
+                <div class="media-body text-left">
+                    <h2 class="media-heading">{{dish.name}}</h2>
+                    <div>主要食物：{{dish.material}}</div>
+                    <div class="menu-divider"></div>
+                    <span class="text-danger">{{dish.price | currency: '￥'}}</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <button class="btn btn-success btn-block" ng-click="loadMore()" ng-disabled="isLoading"  ng-if="!noMore">
+        <span ng-hide="isLoading">加载更多</span>
+        <img class="menu-loading" src="img/loading.gif" ng-show="isLoading">
+    </button>
+    <div class="alert alert-warning" ng-if="noMore">没有更多数据了</div>
+</div>
+<div ng-include="'tpl/footer.html'"></div>

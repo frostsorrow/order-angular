@@ -1,0 +1,35 @@
+<div ng-include="'tpl/header.html'"></div>
+<div class="container" ng-controller="orderCtrl">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="form" id="ordering" ng-if="!orderOk">
+                <div class="form-group">
+                    <label for="uname" class="pull-left">联系人：</label>
+                    <input type="text" class="form-control" id="uname" ng-model="user.user_name">
+                </div>
+                <div class="form-group">
+                    <label>性别：</label><br>
+                    <label class="radio-inline">
+                        <input type="radio" name="gender" value="1" ng-model="user.sex">先生
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="gender" value="2" ng-model="user.sex">女士
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="tel" class="pull-left" >联系电话：</label>
+                    <!--这里必须要填数字，否则会报错，因为sql定义这个数据为数字类型！！！！-->
+                    <input type="text" class="form-control" id="tel" ng-model="user.phone">
+                </div>
+                <div class="form-group">
+                    <label for="address" class="pull-left">送餐地址：</label>
+                    <div class="clearfix"></div>
+                    <textarea name="address" id="address" class="round-border textarea-size" ng-model="user.addr"></textarea>
+                </div>
+                <button class="btn btn-success btn-block" ng-click="submitOrder()">确定下单</button>
+            </div>
+            <div class="alert alert-success" ng-if="orderOk">订单成功！您的订单编号为：{{oid}}。您可以在用户中心查看订单状态。</div>
+        </div>
+    </div>
+</div>
+<div ng-include="'tpl/footer.html'"></div>
